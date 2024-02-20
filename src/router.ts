@@ -6,7 +6,21 @@ const router = createRouter({
         {
             path: '/user/login',
             name: 'home',
-            component: () => import('./views/user/login.vue'),
+            component: () => import('./views/user/login'),
+        },
+        {
+            path: '/single/',
+            component: () => import('./views/patterns/empty.vue'),
+            children: [
+                {
+                    path: 'login',
+                    component: () => import('./views/user/login.vue'),
+                    meta: {
+                        'title': 'داشبورد کاربر',
+                        'login': true
+                    }
+                },
+            ],
         },
     ]
 })

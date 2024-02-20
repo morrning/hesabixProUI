@@ -1,5 +1,9 @@
 <template>
-    <RouterView/>
+    <v-app class="bg-grey-lighten-5">
+    <v-main>
+      <RouterView/>
+    </v-main>
+  </v-app>
 </template>
   
 <script lang="ts">
@@ -9,4 +13,8 @@
       name: "empty"
   })
 </script>
+
+<style>
+
+</style>
   
