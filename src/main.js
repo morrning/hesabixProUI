@@ -18,7 +18,9 @@ import router from './router';
 
 //translatins
 import VueI18n from 'vue-i18n'
-import {translations} from './i18n/translations';
+import translations from './i18n/translations';
+// Translations provided by Vuetify
+import { en, fa, ar } from 'vuetify/locale'
 const i18n = VueI18n.createI18n({
     locale: 'fa', // set locale
     fallbackLocale: 'fa', // set fallback locale
