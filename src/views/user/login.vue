@@ -1,12 +1,15 @@
 <template>
-    <v-app>
-      <v-main>
-        <RouterView/>
-      </v-main>
-    </v-app>
-  </template>
+   <v-card
+</template>
   
-  <script setup>
-    //
-  </script>
+<script lang="ts">
+import {defineComponent} from 'vue'
+
+export default defineComponent({
+    name: "login",
+    mounted(){
+      alert();
+    }
+})
+</script>
   

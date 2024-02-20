@@ -1,6 +1,4 @@
 import {createRouter, createWebHashHistory, createWebHistory} from 'vue-router'
-import axios from "axios";
-
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
