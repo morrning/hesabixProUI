@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-row class="d-flex justify-center">
-            <v-col cols="6">
+            <v-col md="5">
                 <v-card :loading="loading" :title="$t('app.name')" :subtitle="$t('user.login_label')">
                     <v-card-text class="text-justify">
                         {{ $t('login.des') }}
@@ -14,6 +14,7 @@
                         single-line
                         type="email"
                         variant="outlined"
+                        :disabled="loading"
                     ></v-text-field>
 
                     <v-text-field
@@ -22,6 +23,7 @@
                         single-line
                         type="password"
                         variant="outlined"
+                        :disabled="loading"
                     ></v-text-field>
                     <v-btn
                         :disabled="loading"
@@ -31,9 +33,10 @@
                         color="indigo-darken-3"
                         size="x-large"
                         variant="flat"
+                        prepend-icon="mdi-login"
                         @click="loading = !loading"
                     >
-                        {{ $t('app.name') }}
+                        {{ $t('user.login') }}
                     </v-btn>
                     </v-card-text>
                 </v-card>
@@ -47,7 +50,9 @@
     data: () => ({
       loading: false,
     }),
-
+    mounted(){
+        
+    },
     watch: {
       loading (val) {
         if (!val) return

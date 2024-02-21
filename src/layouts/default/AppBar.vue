@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar flat>
+  <v-app-bar>
     <v-app-bar-title>
       <div class="d-flex align-items-center">
         <!-- Logo -->
