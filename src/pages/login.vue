@@ -1,7 +1,0 @@
-<template>
-    <div>{{ $t("app.name") }}</div>
-</template>
-  
-<script lang="ts" setup>
-    //
-</script>
