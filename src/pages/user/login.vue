@@ -15,6 +15,7 @@
                         type="email"
                         variant="outlined"
                         :disabled="loading"
+                        prepend-icon="mdi-email"
                     ></v-text-field>
 
                     <v-text-field
@@ -24,6 +25,7 @@
                         type="password"
                         variant="outlined"
                         :disabled="loading"
+                        prepend-icon="mdi-lock"
                     ></v-text-field>
                     <v-btn
                         :disabled="loading"
