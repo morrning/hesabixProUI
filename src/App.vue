@@ -1,11 +1,11 @@
 <template>
   <v-app>
     <v-main>
-      <RouterView/>
+      <router-view />
     </v-main>
   </v-app>
 </template>
 
-<script setup>
+<script lang="ts" setup>
   //
 </script>
