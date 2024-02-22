@@ -10,16 +10,16 @@ export default defineComponent({
       loading:false,
       rules:{
         name: [
-          value => self.validate(value,'fill'),
+          (value:any) => self.validate(value,'fill'),
         ],
         email: [
-          value => self.validate(value,'email'),
+        (value:any) => self.validate(value,'email'),
         ],
         mobile: [
-          value => self.validate(value,'mobile'),
+        (value:any) => self.validate(value,'mobile'),
         ],
         password: [
-          value => self.validate(value,'password'),
+        (value:any) => self.validate(value,'password'),
         ],
       }
 

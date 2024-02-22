@@ -8,7 +8,7 @@ export default defineComponent({
 </script>
 
 <template>
-8888888
+application layer
 <RouterView />
 </template>
 
