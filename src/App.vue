@@ -9,3 +9,7 @@
 <script lang="ts" setup>
   //
 </script>
+
+<style>
+  @import "../node_modules/vazirmatn/misc/Farsi-Digits/Vazirmatn-FD-font-face.css"
+</style>

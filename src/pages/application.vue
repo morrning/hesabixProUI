@@ -2,15 +2,23 @@
 import {defineComponent} from 'vue'
 
 export default defineComponent({
-  name: "app"
+  name: "application",
+
 })
 </script>
 
 <template>
-rrrrrrr
-  <router-view />
+8888888
+<RouterView />
 </template>
 
 <style scoped>
 
 </style>
+<route>
+  {
+    meta: {
+      layout: "second"
+    }
+  }
+</route>
