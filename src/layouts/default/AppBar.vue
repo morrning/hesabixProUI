@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar>
+  <v-app-bar flat>
     <v-app-bar-title>
       <div class="d-flex align-items-center">
         <!-- Logo -->
@@ -7,8 +7,6 @@
         <span class="">{{ $t('app.name') }}</span>
         <!-- END Logo -->
       </div>
-     
-      
     </v-app-bar-title>
   </v-app-bar>
 </template>

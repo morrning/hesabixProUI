@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["vite-plugin-vue-layouts/client"],
     "baseUrl": ".",
     "target": "ESNext",
     "useDefineForClassFields": true,

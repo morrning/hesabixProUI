@@ -41,6 +41,11 @@
                         {{ $t('user.login') }}
                     </v-btn>
                     </v-card-text>
+                    <v-card-text>
+                        <v-btn to="/user/forget-password">
+                            {{ $t('user.forget_password_des') }}
+                        </v-btn>
+                    </v-card-text>
                 </v-card>
             </v-col>
         </v-row>
