@@ -3,6 +3,10 @@ const fa_lang = {
   $vuetify: {
     ...fa,
   },
+  dialog:{
+    ok: "قبول",
+    cancel: "بازگشت"
+  },
   app:{
     name:"حسابیکس"
   },

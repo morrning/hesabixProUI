@@ -1,15 +1,18 @@
+<script setup lang="ts">
+</script>
+
 <template>
   <v-app>
     <v-main>
-      <router-view />
+      <RouterView />
     </v-main>
   </v-app>
+
 </template>
 
-<script lang="ts" setup>
-  //
-</script>
-
 <style>
-  @import "../node_modules/vazirmatn/misc/Farsi-Digits/Vazirmatn-FD-font-face.css"
+@import "../node_modules/vazirmatn/misc/Farsi-Digits/Vazirmatn-FD-font-face.css";
+body{
+  font-family: "Vazirmatn FD",sans-serif;
+}
 </style>
