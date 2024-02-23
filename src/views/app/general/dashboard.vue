@@ -3,7 +3,7 @@
 </script>
 
 <template>
-from dashbard
+xzcfcdsf
 </template>
 
 <style scoped>

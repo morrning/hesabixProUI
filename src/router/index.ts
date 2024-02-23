@@ -17,6 +17,12 @@ const router = createRouter({
           path: 'dashboard',
           component: () => import('@/views/app/general/dashboard.vue'),
         },
+        {
+          path: "/:catchAll(.*)",
+          name: "not-found",
+          component: () => import('@/views/static/page404.vue'),
+          
+        },
       ],
     },
     {
@@ -26,6 +32,12 @@ const router = createRouter({
         {
           path: 'dashboard',
           component: () => import('@/views/user/dashboard.vue'),
+        },
+        {
+          path: "/:catchAll(.*)",
+          name: "not-found",
+          component: () => import('@/views/static/page404.vue'),
+          
         },
       ],
     },
@@ -43,7 +55,19 @@ const router = createRouter({
           path: 'forget-password',
           component: () => import('@/views/single/forget_password.vue'),
         },
+        {
+          path: "/:catchAll(.*)",
+          name: "not-found",
+          component: () => import('@/views/static/page404.vue'),
+          
+        },
       ],
+    },
+    {
+      path: "/:catchAll(.*)",
+      name: "not-found",
+      component: () => import('@/views/static/page404.vue'),
+      
     },
   ]
 })

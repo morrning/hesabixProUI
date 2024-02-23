@@ -3,6 +3,9 @@ const fa_lang = {
   $vuetify: {
     ...fa,
   },
+  static:{
+    not_found: "صفحه مورد نظر یافت نشد"
+  },
   dialog:{
     ok: "قبول",
     cancel: "بازگشت"
