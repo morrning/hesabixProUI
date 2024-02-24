@@ -70,13 +70,12 @@ export default defineComponent({
                   text: response.data.message,
                   confirmButtonText: this.$t('dialog.ok'),
                   icon:'warning'
-                }).then((result:any)=>{
-                  if(response.data.code == '101') this.user.email = '';
-                  else if(response.data.code == '102') this.user.mobile = '';
                 });
+                if(response.data.code == '101') this.user.email = '';
+                else if(response.data.code == '102') this.user.mobile = '';
               }
               else{
-                alert()
+                this.$router.push('/single/active-account/' + response.data.data)
               }
             });
       }

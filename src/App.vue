@@ -1,4 +1,18 @@
-<script setup lang="ts">
+<script lang="ts">
+  import {defineComponent} from 'vue'
+  import axios from "axios";
+  import {useUserStore} from "@/stores/user";
+  export default defineComponent({
+    name: "App",
+    data() {
+
+    },
+    async beforeMount() {
+        //load user data
+        const currentUser = useUserStore();
+        await currentUser.refresh()
+    },
+  });
 </script>
 
 <template>

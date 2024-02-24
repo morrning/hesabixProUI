@@ -8,7 +8,9 @@ const fa_lang = {
   },
   dialog:{
     ok: "قبول",
-    cancel: "بازگشت"
+    cancel: "بازگشت",
+    save: "ثبت",
+    active_account:"فعال سازی"
   },
   app:{
     name:"حسابیکس"
@@ -29,6 +31,13 @@ const fa_lang = {
     forget_password:"بازیابی کلمه عبور",
     mobile_placeholder:"مثلا 09121234567",
     mobile:"تلفن همراه",
+    editNumber: "ویرایش شماره",
+    resendCodeLabel: "ارسال مجدد",
+    resendCode: "کد فعال سازی مجددا ارسال شد.",
+    your_phone_number: " شماره تلفن شما: {mobile}",
+    active_account:"فعال سازی حساب کاربری",
+    send_again: "ارسال مجدد",
+    number_edited: "شماره تلفن با موفقیت تغییر یافت . کد فعال سازی جدید به شماره شما ارسال شد",
     register_terms_des:"عضویت در حسابیکس به معنای قبول شرایط و مقررات استفاده از آن است.برای مشاهده متن توافقنامه به صفحه نخست مراجعه نمایید"
   },
   login:{

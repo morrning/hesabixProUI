@@ -11,6 +11,8 @@ import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
+import colors from 'vuetify/util/colors'
+
 //i18n imports
 import { createVueI18nAdapter } from 'vuetify/locale/adapters/vue-i18n'
 import { createI18n, useI18n } from 'vue-i18n'
@@ -19,6 +21,9 @@ import i18n from '@/i18n/i18n'
 import '@mdi/font/css/materialdesignicons.css'
 import 'vuetify/styles'
 import {aliases, mdi} from "vuetify/iconsets/mdi";
+
+//vue countdown
+import VueCountdown from '@chenfengyuan/vue-countdown';
 
 //axios
 import axios from "axios";
@@ -43,6 +48,18 @@ const vuetify = createVuetify({
     locale: {
         adapter: createVueI18nAdapter({ i18n, useI18n }),
     },
+    theme: {
+        themes: {
+            light: {
+                dark: false,
+                colors: {
+                    primary: colors.indigo.darken4, // #E53935
+                    secondary: colors.grey.darken4, // #FFCDD2
+                    danger: colors.red.darken3
+                }
+            },
+        },
+    },
 })
 // swall alert
 import VueSweetalert2 from 'vue-sweetalert2';
@@ -52,7 +69,7 @@ const swallOptions = {
 };
 
 const app = createApp(App)
-
+app.component(VueCountdown.name, VueCountdown);
 app.use(createPinia())
 app.use(router)
 app.use(vuetify)

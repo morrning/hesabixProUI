@@ -54,6 +54,9 @@ const router = createRouter({
         },{
           path: 'forget-password',
           component: () => import('@/views/single/forget_password.vue'),
+        },{
+          path: 'active-account/:id',
+          component: () => import('@/views/single/active_account.vue'),
         },
         {
           path: "/:catchAll(.*)",
