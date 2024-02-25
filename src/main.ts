@@ -67,6 +67,9 @@ import 'sweetalert2/dist/sweetalert2.min.css';
 const swallOptions = {
 
 };
+//  check user login state
+const result = await axios.get('/api/user/is_loged_in');
+localStorage.setItem('isLogedIn',result.data.data);
 
 const app = createApp(App)
 app.component(VueCountdown.name, VueCountdown);

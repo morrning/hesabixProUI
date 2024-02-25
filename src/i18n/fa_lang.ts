@@ -13,7 +13,9 @@ const fa_lang = {
     active_account:"فعال سازی"
   },
   app:{
-    name:"حسابیکس"
+    name:"حسابیکس",
+    loading:"در حال بارگزاری...",
+    please_wait: "لطفا صبر کنید ..."
   },
   user:{
     name:"نام و نام خانوادگی",

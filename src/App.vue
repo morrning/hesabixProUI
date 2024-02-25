@@ -5,12 +5,12 @@
   export default defineComponent({
     name: "App",
     data() {
-
-    },
-    async beforeMount() {
-        //load user data
-        const currentUser = useUserStore();
-        await currentUser.refresh()
+      const self = this;
+      return{
+      currentUser:useUserStore()
+    }},
+    mounted() {
+        this.currentUser.refresh();
     },
   });
 </script>
