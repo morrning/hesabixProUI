@@ -26,6 +26,9 @@ export const useUserStore = defineStore('user', {
                 this.data.login = false;
             });
             this.synced = true;
+        },
+        isLogin(){
+            return this.data.login;
         }
     },
 })

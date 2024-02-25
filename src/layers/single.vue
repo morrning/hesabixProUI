@@ -1,5 +1,15 @@
-<script setup lang="ts">
+<script lang="ts">
+ export default {
+    name:'single',
+    data() {return{
 
+    }},
+    created() {
+      if(localStorage.getItem('isLogedIn') == true){
+        this.$router.push('/app/dashboard')
+      }
+    },
+  }
 </script>
 
 <template>

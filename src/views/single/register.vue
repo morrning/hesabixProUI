@@ -46,7 +46,7 @@ export default defineComponent({
         if(input == undefined ) {
           return false
         }
-        else if (input.length > 8) return true
+        else if (input.length > 7) return true
         return this.$t('validator.password_len_lower')
       }
       else if(type == 'mobile'){
