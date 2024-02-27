@@ -1,7 +1,7 @@
 <script lang="ts">
   import {defineComponent} from 'vue'
   import axios from "axios";
-  import {useUserStore} from "@/stores/user";
+  import {useUserStore} from "@/stores/userStore";
   export default defineComponent({
     name: "App",
     data() {

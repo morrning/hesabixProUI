@@ -31,8 +31,13 @@ const router = createRouter({
         {
           path: 'dashboard',
           component: () => import('@/views/user/dashboard.vue'),
-        },
-        {
+        },{
+          path: 'change-password',
+          component: () => import('@/views/user/change_password.vue'),
+        },{
+          path: 'new-business',
+          component: () => import('@/views/user/business_create.vue'),
+        },{
           path: "/:catchAll(.*)",
           name: "not-found",
           component: () => import('@/views/static/page404.vue'),
@@ -56,6 +61,12 @@ const router = createRouter({
         },{
           path: 'active-account/:id',
           component: () => import('@/views/single/active_account.vue'),
+        },{
+          path: 'reset-password/:id',
+          component: () => import('@/views/single/reset-password.vue'),
+        },{
+          path: 'logout',
+          component: () => import('@/views/single/logout.vue'),
         },
         {
           path: "/:catchAll(.*)",

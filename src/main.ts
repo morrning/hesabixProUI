@@ -55,7 +55,9 @@ const vuetify = createVuetify({
                 colors: {
                     primary: colors.indigo.darken4, // #E53935
                     secondary: colors.grey.darken4, // #FFCDD2
-                    danger: colors.red.darken3
+                    danger: colors.red.darken3,
+                    primaryLight: '#f8f9fc',
+                    primaryLight2: '#edf1fc'
                 }
             },
         },
@@ -71,6 +73,8 @@ const swallOptions = {
 const result = await axios.get('/api/user/is_loged_in');
 localStorage.setItem('isLogedIn',result.data.data);
 
+// add app stores
+import applicationStore from "@/stores/application";
 const app = createApp(App)
 app.component(VueCountdown.name, VueCountdown);
 app.use(createPinia())
@@ -78,4 +82,6 @@ app.use(router)
 app.use(vuetify)
 app.use(i18n)
 app.use(VueSweetalert2,swallOptions);
+//add stores
+app.use(applicationStore);
 app.mount('#app')

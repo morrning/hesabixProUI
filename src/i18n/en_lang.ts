@@ -1,57 +1,57 @@
-import { fa } from 'vuetify/locale'
-const fa_lang = {
+import { en } from 'vuetify/locale'
+const en_lang = {
   $vuetify: {
-    ...fa,
+    ...en,
   },
   static:{
-    not_found: "صفحه مورد نظر یافت نشد",
-    logout_loading: "در حال خروج ..."
+    not_found: "Page Not Found!",
+    logout_loading: "you logged out ..."
   },
   dialog:{
-    ok: "قبول",
-    cancel: "بازگشت",
-    save: "ثبت",
-    active_account:"فعال سازی"
+    ok: "Ok",
+    cancel: "Cancel",
+    save: "Save",
+    active_account:"Active Account"
   },
   app:{
-    name:"حسابیکس",
-    loading:"در حال بارگزاری...",
-    please_wait: "لطفا صبر کنید ...",
-    logout: "خروج",
-    profile: "داشبورد کاربری"
+    name:"Hesabix",
+    loading:"Loading ...",
+    please_wait: "Please wait ...",
+    logout: "Exit",
+    profile: "Dashboard"
   },
   user:{
-    name:"نام و نام خانوادگی",
-    name_des:"مثلا علی باقری",
-    password_register_des:"کلمه عبور باید بیشتر از ۱۰ کاراکتر و ترکیبی از اعداد و حروف باشد",
-    login_label:"ورود به حسابیکس",
-    register_label:"عضویت در حسابیکس",
-    login:"ورود",
-    email_placeholder:"پست الکترونیکی خود را وارد کنید",
-    email:"پست الکترونیکی",
-    password_placeholder:"کلمه عبور را وارد کنید",
-    password:"کلمه عبور",
-    forget_password_des:"برای بازیابی کلمه عبور اینجا کلیک کنید.",
-    register:"عضویت",
-    forget_password:"بازیابی کلمه عبور",
+    name:"Name and Family",
+    name_des:"Ex : John Martin",
+    password_register_des:"Password show be more than 8 characters",
+    login_label:"Login to Hesabix",
+    register_label:"Register in Hesabix",
+    login:"Login",
+    email_placeholder:"Inout your email",
+    email:"Email",
+    password_placeholder:"Input password",
+    password:"Password",
+    forget_password_des:"For recover your password click here",
+    register:"Register",
+    forget_password:"Recover password",
     forget_password_sended: "کد بازیابی کلمه عبور به شماره تلفن شما ارسال شد",
     password_sended: "کلمه عبور جدید به شماره تلفن شما ارسال شد.",
     mobile_placeholder:"مثلا 09121234567",
-    mobile:"تلفن همراه",
+    mobile:"Mobile number",
     send_new_password: "ارسال کلمه عبور جدید",
-    editNumber: "ویرایش شماره",
-    resendCodeLabel: "ارسال مجدد",
+    editNumber: "Edit Number",
+    resendCodeLabel: "Send Again",
     resendCode: "کد فعال سازی مجددا ارسال شد.",
     your_phone_number: " شماره تلفن شما: {mobile}",
     active_account:"فعال سازی حساب کاربری",
     send_again: "ارسال مجدد",
     businesses: "کسب‌و‌کارها",
     new_business: "کسب‌و‌کار جدید",
-    tickets:"پشتیبانی",
-    manager:"مدیریت",
+    tickets:"Support",
+    manager:"Manager",
     change_password:"تغییر کلمه عبور",
-    notifications: "اعلانات",
-    invoices: "صورت‌حساب‌ها",
+    notifications: "Notifications",
+    invoices: "Invoices",
     send_code_forget_password: "ارسال کد بازیابی",
     number_edited: "شماره تلفن با موفقیت تغییر یافت . کد فعال سازی جدید به شماره شما ارسال شد",
     register_terms_des:"عضویت در حسابیکس به معنای قبول شرایط و مقررات استفاده از آن است.برای مشاهده متن توافقنامه به صفحه نخست مراجعه نمایید"
@@ -77,4 +77,4 @@ const fa_lang = {
     }
   }
 };
-export default fa_lang
+export default en_lang

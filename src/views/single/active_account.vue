@@ -1,9 +1,9 @@
 <script lang="ts">
 import {defineComponent} from 'vue'
 import axios from "axios";
-import {useUserStore} from "@/stores/user";
+import {useUserStore} from "@/stores/userStore";
 export default defineComponent({
-  name: "register",
+  name: "active_account",
   data() {
     const self = this;
     return {
@@ -70,32 +70,30 @@ export default defineComponent({
           this.user = response.data.data;
       })
     },
-    async submit(){
-      const { valid } = await this.$refs.form.validate()
-      if(valid){
-        alert(this.code)
-        axios.post('/api/user/register/active-account',{
-          key:this.$route.params.id,
-          mobile:this.user.mobile,
-          code:this.code
-        })
-            .then((response:any) => {
-              if(response.data.error != 200){
-                this.$swal({
-                  text: response.data.message,
-                  confirmButtonText: this.$t('dialog.ok'),
-                  icon:'warning'
-                });
-                if(response.data.code == '101') this.user.email = '';
-                else if(response.data.code == '102') this.user.mobile = '';
-              }
-              else{
-                localStorage.setItem('X-AUTH-TOKEN',response.data.data.token)
-                this.$router.push('/')
-              }
-            });
-      }
-      this.loading = false;
+    async submit() {
+      const {valid} = await this.$refs.form.validate()
+      if (valid)
+        this.loading = true;
+      axios.post('/api/user/register/active-account', {
+        key: this.$route.params.id,
+        mobile: this.user.mobile,
+        code: this.code
+      }).then((response: any) => {
+        if (response.data.error != 200) {
+          this.$swal({
+            text: response.data.message,
+            confirmButtonText: this.$t('dialog.ok'),
+            icon: 'warning'
+          });
+          if (response.data.code == '101') this.user.email = '';
+          else if (response.data.code == '102') this.user.mobile = '';
+        }
+        else {
+          localStorage.setItem('X-AUTH-TOKEN', response.data.data.token)
+          this.$router.push('/')
+        }
+        this.loading = false;
+      });
     }
   }
 })

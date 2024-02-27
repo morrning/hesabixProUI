@@ -8,53 +8,50 @@ export default defineComponent({
     const self = this;
     return {
       loading:false,
+      mobile:'',
       rules:{
-        name: [
-          (value:any) => self.validate(value,'fill'),
-        ],
-        email: [
-          (value:any) => self.validate(value,'email'),
-        ],
         mobile: [
           (value:any) => self.validate(value,'mobile'),
-        ],
-        password: [
-          (value:any) => self.validate(value,'password'),
-        ],
+        ]
       }
 
     }
   },
   mounted() {
-    this.loadData();
+
   },
   methods:{
-    validate(input:string,type:string){
-      if(type == 'fill'){
-        if (input?.length > 0) return true
-        return this.$t('validator.required')
-      }
-      else if(type == 'email'){
-        if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(input)) return true
-        return this.$t('validator.email_not_valid')
-      }
-      else if(type == 'password'){
-        if(input == undefined ) {
-          return false
-        }
-        else if (input.length > 8) return true
-        return this.$t('validator.password_len_lower')
-      }
-      else if(type == 'mobile'){
-        var regex = new RegExp("^(\\+98|0)?9\\d{9}$");
-        if(regex.test(input))  return true
-        return this.$t('validator.mobile_not_valid')
-      }
+    validate(input:string){
+      var regex = new RegExp("^(\\+98|0)?9\\d{9}$");
+      if(regex.test(input))  return true
+      return this.$t('validator.mobile_not_valid')
     },
-    loadData(){
-      axios.get("/api").then((response:any)=>{
-
-      })
+    async submit(){
+      const { valid } = await this.$refs.form.validate()
+      if(valid){
+        this.loading = true;
+        axios.post('/api/user/forget-password',{mobile:this.mobile}).then((response)=>{
+          if(response.data.error == "200"){
+            this.$swal({
+              text: this.$t('user.forget_password_sended'),
+              confirmButtonText: this.$t('dialog.ok'),
+              icon:'success'
+            }).then((result)=>{
+              this.$router.push('/single/reset-password/' + response.data.data.token)
+            });
+          }
+          else {
+            this.$swal({
+              text: response.data.message,
+              confirmButtonText: this.$t('dialog.ok'),
+              icon:'warning'
+            }).then(()=>{
+              this.mobile='';
+              this.loading=false;
+            });
+          }
+        })
+      }
     }
   }
 })
@@ -64,32 +61,11 @@ export default defineComponent({
   <v-container>
     <v-row class="d-flex justify-center">
       <v-col md="5">
-        <v-card :loading="loading ? 'blue' : null" :title="$t('app.name')" :subtitle="$t('user.register_label')">
+        <v-card :loading="loading ? 'blue' : null" :title="$t('app.name')" :subtitle="$t('user.forget_password')">
           <v-card-text>
-            <v-form :disabled="loading" fast-fail @submit.prevent >
+            <v-form ref="form" :disabled="loading" fast-fail @submit.prevent="submit()" >
               <v-text-field
-                  class="mb-2"
-                  :label="$t('user.name')"
-                  :placeholder="$t('user.name_des')"
-                  single-line
-                  type="text"
-                  variant="outlined"
-                  prepend-icon="mdi-account"
-                  :rules="rules.name"
-              ></v-text-field>
-
-              <v-text-field
-                  class="mb-2"
-                  :label="$t('user.email')"
-                  :placeholder="$t('user.email_placeholder')"
-                  single-line
-                  type="email"
-                  variant="outlined"
-                  prepend-icon="mdi-email"
-                  :rules="rules.email"
-              ></v-text-field>
-
-              <v-text-field
+                  v-model="mobile"
                   class="mb-2"
                   :label="$t('user.mobile')"
                   :placeholder="$t('user.mobile_placeholder')"
@@ -99,21 +75,6 @@ export default defineComponent({
                   prepend-icon="mdi-phone"
                   :rules="rules.mobile"
               ></v-text-field>
-
-              <v-text-field
-                  class="mb-2"
-                  :label="$t('user.password')"
-                  :placeholder="$t('user.password_register_des')"
-                  single-line
-                  type="password"
-                  variant="outlined"
-                  prepend-icon="mdi-lock"
-                  :rules="rules.password"
-              ></v-text-field>
-              <v-card-text class="text-justify text-info">
-                <v-icon icon="mdi-information" />
-                {{ $t('user.register_terms_des') }}
-              </v-card-text>
               <v-btn
                   :loading="loading"
                   block
@@ -121,10 +82,10 @@ export default defineComponent({
                   color="indigo-darken-3"
                   size="x-large"
                   variant="flat"
-                  prepend-icon="mdi-account-plus"
-                  @click="loading = !loading"
+                  prepend-icon="mdi-send-circle"
+                  type="submit"
               >
-                {{ $t('user.register') }}
+                {{ $t('user.send_code_forget_password') }}
               </v-btn>
             </v-form>
 

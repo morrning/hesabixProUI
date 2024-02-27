@@ -63,6 +63,7 @@ export default defineComponent({
     async submit(){
       const { valid } = await this.$refs.form.validate()
       if(valid){
+        this.loading = true;
         axios.post('/api/user/register',this.user)
             .then((response:any) => {
               if(response.data.error != 200){
@@ -77,9 +78,9 @@ export default defineComponent({
               else{
                 this.$router.push('/single/active-account/' + response.data.data)
               }
+              this.loading = false;
             });
       }
-      this.loading = false;
     }
   }
 })

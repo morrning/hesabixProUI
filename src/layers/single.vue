@@ -1,12 +1,15 @@
 <script lang="ts">
+ import Change_lang from "@/components/application/buttons/change_lang.vue";
+
  export default {
     name:'single',
+   components: {Change_lang},
     data() {return{
 
     }},
     created() {
       if(localStorage.getItem('isLogedIn') == true){
-        this.$router.push('/app/dashboard')
+        this.$router.push('/user/dashboard')
       }
     },
   }
@@ -47,6 +50,7 @@
         ></v-tab>
       </v-tabs>
       <v-spacer></v-spacer>
+      <change_lang />
     </v-app-bar>
 
     <v-main class="bg-grey-lighten-3">

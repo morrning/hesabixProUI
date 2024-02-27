@@ -1,6 +1,6 @@
 <script lang="ts">
 import {defineComponent} from 'vue'
-import {useUserStore} from "@/stores/user";
+import {useUserStore} from "@/stores/userStore";
 //vue rotate spinner
 export default defineComponent({
   name: "home",
@@ -10,7 +10,7 @@ export default defineComponent({
   beforeMount() {
     //check user is login or not
     if(localStorage.getItem('isLogedIn') == true){
-      this.$router.push('/app/dashboard');
+      this.$router.push('/user/dashboard');
     }
     else{
       this.$router.push('/single/login');
