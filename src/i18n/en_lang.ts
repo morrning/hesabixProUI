@@ -38,15 +38,15 @@ const en_lang = {
     password_sended: "کلمه عبور جدید به شماره تلفن شما ارسال شد.",
     mobile_placeholder:"مثلا 09121234567",
     mobile:"Mobile number",
-    send_new_password: "ارسال کلمه عبور جدید",
+    send_new_password: "Send new password",
     editNumber: "Edit Number",
     resendCodeLabel: "Send Again",
-    resendCode: "کد فعال سازی مجددا ارسال شد.",
-    your_phone_number: " شماره تلفن شما: {mobile}",
+    resendCode: "Active code sended again",
+    your_phone_number: "Your phone number: {mobile}",
     active_account:"فعال سازی حساب کاربری",
-    send_again: "ارسال مجدد",
-    businesses: "کسب‌و‌کارها",
-    new_business: "کسب‌و‌کار جدید",
+    send_again: "Send again",
+    businesses: "Businesses",
+    new_business: "Create Business",
     tickets:"Support",
     manager:"Manager",
     change_password:"تغییر کلمه عبور",
@@ -60,20 +60,20 @@ const en_lang = {
     des:"برای ورود به حسابیکس نام کاربری و کلمه عبور خود را وارد کنید.در صورتی که هنوز عضو نیستید با کلیک بر روی دکمه عضویت و برای بازیابی کلمه عبور از دکمه فراموشی کلمه عبور استفاده نمایید."
   },
   validator:{
-    required:"الزامی است!",
-    email_not_valid:"پست الکترونیکی معتبر نیست",
-    password_len_lower:"طول کلمه عبور کم است",
-    mobile_not_valid:"شماره موبایل معتبر نیست",
+    required:"required",
+    email_not_valid:"Email is not valid",
+    password_len_lower:"password is too short",
+    mobile_not_valid:"Phone number is not valid",
   },
   hesabix:{
-    banner:"حسابیکس سامانه جامع مدیریت مالی"
+    banner:"Hesabix Best Accounting Sulotion"
 
   },
   title:{
     user:{
-      dashboard: "پروفایل کاربر",
-      businesses: "کسب‌و‌کارها",
-      business_create: "ایجاد کسب و کار جدید",
+      dashboard: "Profile",
+      businesses: "Businesses",
+      business_create: "Create Business",
     }
   }
 };

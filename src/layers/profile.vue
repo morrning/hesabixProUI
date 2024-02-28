@@ -55,7 +55,7 @@ import Change_lang from "@/components/application/buttons/change_lang.vue";
           <v-avatar image="/img/favw.png" />
         </template>
       </v-card>
-      <v-list class="px-1 pt-0">
+      <v-list class="px-0 pt-0">
         <v-list-item
             v-for="(item, i) in items"
             v-show="item.visible"
@@ -63,7 +63,7 @@ import Change_lang from "@/components/application/buttons/change_lang.vue";
             :key="i"
             :value="item"
             color="primary"
-            rounded="lg"
+          
         >
           <template v-slot:prepend>
             <v-icon :icon="item.icon"></v-icon>
