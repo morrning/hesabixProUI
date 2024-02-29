@@ -75,6 +75,28 @@ const fa_lang = {
       businesses: "کسب‌و‌کارها",
       business_create: "ایجاد کسب و کار جدید",
     }
+  },
+  pages:{
+    reset_password:{
+      form_not_valid: "اطلاعات به درستی وارد نشده است",
+      passwords_not_match: "کلمات عبور وارد شده مطابق نیستند!",
+      password_changed: "کلمه عبور تغییر یافت"
+    },
+    create_business:{
+      info:"اطلاعات کسب و کار",
+      financial_settings:"تنظیمات مالی",
+      preview:"پیش نمایش",
+      business_name: "نام کسب و کار",
+      country:"کشور",
+      address:"آدرس",
+      moneys:"واحد‌های پولی",
+      moneys_hint:"واحد های پولی انتخاب شده در آینده قابل حذف نیستند!",
+      shamsi:"هجری شمسی",
+      gregorian:"میلادی",
+      ghamari:"هجری قمری",
+      calender:"تقویم",
+      fiscal_year:"سال مالی",
+    }
   }
 };
 export default fa_lang
