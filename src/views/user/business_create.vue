@@ -5,6 +5,9 @@ import axios from "axios";
 
 export default defineComponent({
   name: "business_create",
+  components: {
+    
+  },
   data(){
     const self = this;
     return{
@@ -137,7 +140,24 @@ export default defineComponent({
                   <v-col cols="12">
                     <h3 class="ms-5">{{$t('pages.create_business.fiscal_year')}}</h3>
                   </v-col>
-                  <v-date-picker show-adjacent-months></v-date-picker>
+                  <v-dialog max-width="500">
+                    <template v-slot:activator="{ props: activatorProps }">
+                      <v-btn
+                          v-bind="activatorProps"
+                          color="surface-variant"
+                          text="Open Dialog"
+                          variant="flat"
+                      ></v-btn>
+                    </template>
+
+                    <template v-slot:default="{ isActive }">
+                      <v-card title="Dialog">
+                        <v-card-text>
+                          <v-date-picker></v-date-picker>
+                        </v-card-text>
+                      </v-card>
+                    </template>
+                  </v-dialog>
                 </v-row>
               </v-card>
             </template>

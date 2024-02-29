@@ -33,6 +33,7 @@ import config from "@/hesabix.conf";
 //configure axios
 axios.defaults.headers.common['X-AUTH-TOKEN'] = localStorage.getItem('X-AUTH-TOKEN');
 axios.defaults.baseURL = config.apiUrl;
+
 // vuetify
 const vuetify = createVuetify({
     components,
@@ -74,6 +75,8 @@ localStorage.setItem('isLogedIn',result.data.data);
 
 // add app stores
 import applicationStore from "@/stores/application";
+
+//add components
 const app = createApp(App)
 app.component(VueCountdown.name, VueCountdown);
 app.use(createPinia())
