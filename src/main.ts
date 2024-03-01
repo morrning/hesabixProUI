@@ -49,6 +49,7 @@ const vuetify = createVuetify({
         adapter: createVueI18nAdapter({ i18n, useI18n }),
     },
     theme: {
+        defaultTheme: 'light',
         themes: {
             light: {
                 dark: false,
@@ -77,8 +78,29 @@ localStorage.setItem('isLogedIn',result.data.data);
 import applicationStore from "@/stores/application";
 
 //add components
+import Hdatepicker from "@/components/forms/Hdatepicker.vue";
+import Vue3PersianDatetimePicker from 'vue3-persian-datetime-picker';
+
 const app = createApp(App)
 app.component(VueCountdown.name, VueCountdown);
+app.component('h-date-picker',Hdatepicker);
+
+app.use(Vue3PersianDatetimePicker, {
+    name: 'CustomDatePicker',
+    props: {
+        format: 'YYYY/MM/DD',
+        displayFormat: 'jYYYY/jMM/jDD',
+        locale:localStorage.getItem('UI_LANG'),
+        editable: false,
+        inputClass: 'v-field__field',
+        altFormat: 'YYYY/MM/DD',
+        color: '#00acc1',
+        autoSubmit: true,
+        //...
+        //... And whatever you want to set as default.
+        //...
+    }
+})
 app.use(createPinia())
 app.use(router)
 app.use(vuetify)

@@ -2,11 +2,13 @@
 import {defineComponent} from 'vue'
 import applicationStore from "../../stores/application";
 import axios from "axios";
+import HDatePicker from "@/components/forms/Hdatepicker.vue";
 
 export default defineComponent({
   name: "business_create",
   components: {
-    
+    HDatePicker
+
   },
   data(){
     const self = this;
@@ -28,6 +30,8 @@ export default defineComponent({
         moneys:[],
         address:'',
         calendar:'',
+        dateStart:'',
+        dateEnd:''
       }
   }},
   computed: {
@@ -47,6 +51,11 @@ export default defineComponent({
       this.moneys = response.data.data;
     });
   },
+  methods:{
+    ff(){
+      console.log(this.formData.dateStart)
+    }
+  }
 })
 </script>
 
@@ -140,24 +149,8 @@ export default defineComponent({
                   <v-col cols="12">
                     <h3 class="ms-5">{{$t('pages.create_business.fiscal_year')}}</h3>
                   </v-col>
-                  <v-dialog max-width="500">
-                    <template v-slot:activator="{ props: activatorProps }">
-                      <v-btn
-                          v-bind="activatorProps"
-                          color="surface-variant"
-                          text="Open Dialog"
-                          variant="flat"
-                      ></v-btn>
-                    </template>
+                  <CustomDatePicker append-to="body" v-model="formData.dateStart" />
 
-                    <template v-slot:default="{ isActive }">
-                      <v-card title="Dialog">
-                        <v-card-text>
-                          <v-date-picker></v-date-picker>
-                        </v-card-text>
-                      </v-card>
-                    </template>
-                  </v-dialog>
                 </v-row>
               </v-card>
             </template>
