@@ -38,6 +38,9 @@ const router = createRouter({
           path: 'new-business',
           component: () => import('@/views/user/business_create.vue'),
         },{
+          path: 'new-order',
+          component: () => import('@/views/user/new_order.vue'),
+        },{
           path: "/:catchAll(.*)",
           name: "not-found",
           component: () => import('@/views/static/page404.vue'),

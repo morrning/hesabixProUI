@@ -57,8 +57,10 @@ const vuetify = createVuetify({
                     primary: colors.indigo.darken4, // #E53935
                     secondary: colors.grey.darken4, // #FFCDD2
                     danger: colors.red.darken3,
+                    dangerLight: colors.red.lighten4,
                     primaryLight: '#f8f9fc',
-                    primaryLight2: '#edf1fc'
+                    primaryLight2: '#edf1fc',
+                    success: '#457237'
                 }
             },
         },
@@ -80,7 +82,7 @@ import applicationStore from "@/stores/application";
 //add components
 import Hdatepicker from "@/components/forms/Hdatepicker.vue";
 import Vue3PersianDatetimePicker from 'vue3-persian-datetime-picker';
-
+import calendarLocalConfig from "@/i18n/calendarLocalConfig";
 const app = createApp(App)
 app.component(VueCountdown.name, VueCountdown);
 app.component('h-date-picker',Hdatepicker);
@@ -88,17 +90,13 @@ app.component('h-date-picker',Hdatepicker);
 app.use(Vue3PersianDatetimePicker, {
     name: 'CustomDatePicker',
     props: {
-        format: 'YYYY/MM/DD',
-        displayFormat: 'jYYYY/jMM/jDD',
         locale:localStorage.getItem('UI_LANG'),
+        color: "#3059ab",
+        format: calendarLocalConfig.format(localStorage.getItem('UI_CALENDAR')),
+        displayFormat: calendarLocalConfig.format(localStorage.getItem('UI_CALENDAR')),
         editable: false,
-        inputClass: 'v-field__field',
-        altFormat: 'YYYY/MM/DD',
-        color: '#00acc1',
         autoSubmit: true,
-        //...
-        //... And whatever you want to set as default.
-        //...
+        localeConfig: calendarLocalConfig.data().localeConfig
     }
 })
 app.use(createPinia())

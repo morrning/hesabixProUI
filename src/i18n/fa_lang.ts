@@ -3,15 +3,23 @@ const fa_lang = {
   $vuetify: {
     ...fa,
   },
+  calendar:{
+    shamsi:"هجری شمسی",
+    gregorian:"میلادی",
+    ghamari:"هجری قمری",
+  },
   static:{
     not_found: "صفحه مورد نظر یافت نشد",
-    logout_loading: "در حال خروج ..."
+    logout_loading: "در حال خروج ...",
+    new_order: "افزایش اعتبار",
+    business: "کسب و کار",
   },
   dialog:{
     ok: "قبول",
     cancel: "بازگشت",
     save: "ثبت",
-    active_account:"فعال سازی"
+    active_account:"فعال سازی",
+    form_not_fill: "لطفا تمام موارد الزامی را تکمیل کنید"
   },
   app:{
     name:"حسابیکس",
@@ -96,6 +104,21 @@ const fa_lang = {
       ghamari:"هجری قمری",
       calender:"تقویم",
       fiscal_year:"سال مالی",
+      fiscal_year_start:"شروع سال مالی",
+      fiscal_year_end:"پایان سال مالی",
+      fiscal_year_label:"عنوان سال مالی",
+      fiscal_year_label_default: "سال مالی منتهی به {date}",
+      insert_business:"ثبت کسب و کار",
+      created:"کسب و کار با موفقیت ایجاد شد"
+    },
+    dashboard:{
+      money: "واحد پولی",
+      login: "ورود به کسب و کار",
+      remainingDays: "اعتبار: {days} روز",
+      businessExpire: "اعتبار کسب و کار به پایان رسیده برای شارژ حساب اقدام نمایید",
+      businessExpireLabel: "پایان اعتبار",
+      chargeBusiness: "افزایش اعتبار",
+      no_business_alert: "فعلا هیچ کسب وکاری ایجاد نکرده اید یا توسط شخصی در کسب و کاری عضو نشده اید. برای ایجاد کسب و کار جدید از دکمه ایجاد کسب و کار استتفاده نمایید.",
     }
   }
 };

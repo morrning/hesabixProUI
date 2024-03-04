@@ -36,7 +36,6 @@ export default defineComponent({
             });
           }
           else{
-            //user is not active jump to active page
             this.$swal({
               text: response.data.message,
               confirmButtonText: this.$t('dialog.ok'),
