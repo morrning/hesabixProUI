@@ -3,16 +3,27 @@ const fa_lang = {
   $vuetify: {
     ...fa,
   },
+  time:{
+    month: "{id} ماه",
+  },
   calendar:{
     shamsi:"هجری شمسی",
     gregorian:"میلادی",
     ghamari:"هجری قمری",
+  },
+  gate_pays:{
+    shetab: "پرداخت آنلاین از طریق شبکه شتاب ایران",
+    usdt: "پرداخت از طریق ارز دیجیتال تتر",
+    paypal: "پی پال",
+    perfect_money: "پرفکت مانی",
+    bitcoin: "بیت کوین",
   },
   static:{
     not_found: "صفحه مورد نظر یافت نشد",
     logout_loading: "در حال خروج ...",
     new_order: "افزایش اعتبار",
     business: "کسب و کار",
+    charge_time: "مدت اعتبار",
   },
   dialog:{
     ok: "قبول",

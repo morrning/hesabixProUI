@@ -16,17 +16,17 @@ export const useUserStore = defineStore('user', {
     // state: () => ({ count: 0 })
     actions: {
         refresh(){
-            axios.get('/app/current-user/info').then((response:any)=>{
-                if(response.data.error == '200'){
-                    this.data = response.data.data;
+            axios.get('/api2/user/current/info').then((response:any)=>{
+                if(response.data.Success == true){
+                    this.userData = response.data.data;
                 }
             }).catch((result)=>{
-                this.data.login = false;
+                this.userData.login = false;
             });
             this.synced = true;
         },
         isLogin(){
-            return this.data.login;
+            return this.userData.login;
         }
     },
 })

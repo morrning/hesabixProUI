@@ -73,8 +73,9 @@ const swallOptions = {
 
 };
 //  check user login state
-const result = await axios.get('/api/user/is_loged_in');
-localStorage.setItem('isLogedIn',result.data.data);
+const result = await axios.get('/api2/user/check/login');
+console.log(result.data)
+localStorage.setItem('isLogedIn',result.data.Success);
 
 // add app stores
 import applicationStore from "@/stores/application";

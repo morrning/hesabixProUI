@@ -33,7 +33,7 @@ export default defineComponent({
     }
   },
   created() {
-    if(localStorage.getItem('isLogedIn') != true){
+    if(localStorage.getItem('isLogedIn') != 'true'){
       this.$router.push('/single/login')
     }
   },

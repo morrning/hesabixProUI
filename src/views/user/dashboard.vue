@@ -29,7 +29,7 @@
     },
     mounted() {
         this.applicationStore.commit('setTitle','title.user.businesses');
-        axios.get('/app/business/list').then((response)=>{
+        axios.post('/api/business/list',{standard:true}).then((response)=>{
           this.business = response.data.data;
           this.loading = false;
         })
@@ -50,10 +50,6 @@
         this.loading = true;
         this.$router.push('/app/dashboard')
       },
-      expireColorCheck(bus:any){
-        if(bus.validTime == 0) return { color:"dangerLight"}
-        return {}
-      }
     }
   });
 </script>
@@ -86,7 +82,6 @@
           <v-expansion-panel
               v-for="(bus,index) in business"
               :value="bus"
-              v-bind="expireColorCheck(bus)"
           >
             <template v-slot:title>
               <v-row >
@@ -94,21 +89,17 @@
                   <v-icon class="me-2">mdi-domain</v-icon>
                   {{bus.name}}
                 </v-col>
-                <v-col class="d-flex align-center">
-                  <v-btn v-if="bus.validTime > 9" color="primary">{{$t('pages.dashboard.remainingDays',{days:bus.validTime})}}</v-btn>
-                  <v-btn v-else-if="bus.validTime <= 9 && bus.validTime != 0" color="yellow">{{$t('pages.dashboard.remainingDays',{days:bus.validTime})}}</v-btn>
-                  <v-btn v-else color="danger">{{$t('pages.dashboard.businessExpireLabel')}}</v-btn>
-
+                <v-col class="">
                 </v-col>
               </v-row>
             </template>
             <template v-slot:text>
-              <v-row v-if="bus.validTime != 0">
+              <v-row>
                 <v-col>
                   <v-select
                       :items="bus.moneys"
                       v-model="formData.money"
-                      item-title="name"
+                      item-title="label"
                       item-value="props"
                       :label="$t('pages.dashboard.money')"
                       return-object
@@ -130,16 +121,6 @@
                   </v-btn>
                 </v-col>
               </v-row>
-              <v-container v-else>
-                <v-row>
-                  <v-col class="d-flex align-center justify-start">
-                    {{$t('pages.dashboard.businessExpire')}}
-                  </v-col>
-                  <v-col class="d-flex align-center justify-end">
-                    <v-btn color="success" :title="$t('pages.dashboard.chargeBusiness')" to="/user/new-order" prepend-icon="mdi-cart-plus">{{$t('pages.dashboard.chargeBusiness')}}</v-btn>
-                  </v-col>
-                </v-row>
-              </v-container>
             </template>
           </v-expansion-panel>
         </v-expansion-panels>

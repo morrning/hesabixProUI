@@ -4,6 +4,6 @@ const config = {
       This set for access user interface to API.
       If this be wrong user interface not functioning probably.
        */
-    apiUrl: 'http://apipro.hesabix.ir/index.php'
+    apiUrl: 'https://next.hesabix.ir'
 }
 export default config;

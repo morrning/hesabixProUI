@@ -9,7 +9,7 @@ export default defineComponent({
   }},
   beforeMount() {
     //check user is login or not
-    if(localStorage.getItem('isLogedIn') == true){
+    if(localStorage.getItem('isLogedIn') == 'true'){
       this.$router.push('/user/dashboard');
     }
     else{
