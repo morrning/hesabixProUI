@@ -1,14 +1,17 @@
-import {createStore} from "vuex";
+import {defineStore} from "pinia";
 
-const applicationStore = createStore({
+export const applicationStore = defineStore('application',{
     state () {
         return {
             title: 'app.name'
         }
     },
-    mutations: {
+    actions: {
         setTitle (state:any, title:String) {
             state.title = title;
+        },
+        getTitle () {
+            return this.$state.title;
         }
     }
 });

@@ -2,7 +2,7 @@
 import {useUserStore} from "@/stores/userStore";
 import {defineComponent, ref} from 'vue'
 import {mapActions, mapState, mapStores} from "pinia";
-import applicationStore from "../stores/application";
+import applicationStore from "../stores/applicationStore";
 import Change_lang from "@/components/application/buttons/change_lang.vue";
 
   export default defineComponent({
@@ -11,7 +11,7 @@ import Change_lang from "@/components/application/buttons/change_lang.vue";
     data(vm) {
       const self:any = this;
       return {
-        drawer: ref(null),
+        drawer: ref(false),
         menu:false,
         items: [
           { text: self.$t('user.businesses'),url:'/user/dashboard', icon: 'mdi-format-list-text', visible:true },
@@ -77,7 +77,7 @@ import Change_lang from "@/components/application/buttons/change_lang.vue";
     <v-app-bar color="primary">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-app-bar-title>{{ $t(applicationStore.state.title)}}</v-app-bar-title>
+      <v-app-bar-title>{{ $t(applicationStore.getTitle())}}</v-app-bar-title>
       <v-spacer></v-spacer>
       <change_lang/>
       <v-btn icon="mdi-logout-variant" to="/single/logout" class="me-2" />

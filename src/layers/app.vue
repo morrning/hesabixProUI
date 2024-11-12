@@ -16,7 +16,8 @@ export default defineComponent({
   data() {
     const self:any = this;
     return {
-      drawer: ref(null),
+      currentUser: useUserStore(),
+      drawer: ref(false),
       menu:false,
       userMenuItems:[
         {
@@ -36,6 +37,7 @@ export default defineComponent({
     if(localStorage.getItem('isLogedIn') != 'true'){
       this.$router.push('/single/login')
     }
+    this.currentUser.refresh();
   },
   mounted() {
 
@@ -52,8 +54,7 @@ export default defineComponent({
     </v-system-bar>
 
     <v-app-bar color="primary">
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-
+      <v-app-bar-nav-icon></v-app-bar-nav-icon>
       <v-app-bar-title >
         {{$t('app.name')}}
       </v-app-bar-title>
@@ -81,8 +82,8 @@ export default defineComponent({
                 <v-list>
                   <v-list-item
                       prepend-icon="mdi-account"
-                      :title="this.userData.email"
-                      :subtitle="this.userData.name"
+                      :title="currentUser.userData.email"
+                      :subtitle="currentUser.userData.name"
                   >
                   </v-list-item>
                 </v-list>

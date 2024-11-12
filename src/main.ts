@@ -20,7 +20,7 @@ import i18n from '@/i18n/i18n'
 // Styles
 import '@mdi/font/css/materialdesignicons.css'
 import 'vuetify/styles'
-import {aliases, mdi} from "vuetify/iconsets/mdi";
+import { aliases, mdi } from "vuetify/iconsets/mdi";
 
 //vue countdown
 import VueCountdown from '@chenfengyuan/vue-countdown';
@@ -73,12 +73,13 @@ const swallOptions = {
 
 };
 //  check user login state
-const result = await axios.get('/api2/user/check/login');
-console.log(result.data)
-localStorage.setItem('isLogedIn',result.data.Success);
+axios.get('/api2/user/check/login').then((response) => {
+    localStorage.setItem('isLogedIn', response.data.Success);
+
+});
 
 // add app stores
-import applicationStore from "@/stores/application";
+import applicationStore from "@/stores/applicationStore";
 
 //add components
 import Hdatepicker from "@/components/forms/Hdatepicker.vue";
@@ -86,12 +87,12 @@ import Vue3PersianDatetimePicker from 'vue3-persian-datetime-picker';
 import calendarLocalConfig from "@/i18n/calendarLocalConfig";
 const app = createApp(App)
 app.component(VueCountdown.name, VueCountdown);
-app.component('h-date-picker',Hdatepicker);
+app.component('h-date-picker', Hdatepicker);
 
 app.use(Vue3PersianDatetimePicker, {
     name: 'CustomDatePicker',
     props: {
-        locale:localStorage.getItem('UI_LANG'),
+        locale: localStorage.getItem('UI_LANG'),
         color: "#3059ab",
         format: calendarLocalConfig.format(localStorage.getItem('UI_CALENDAR')),
         displayFormat: calendarLocalConfig.format(localStorage.getItem('UI_CALENDAR')),
@@ -104,7 +105,7 @@ app.use(createPinia())
 app.use(router)
 app.use(vuetify)
 app.use(i18n)
-app.use(VueSweetalert2,swallOptions);
+app.use(VueSweetalert2, swallOptions);
 //add stores
 app.use(applicationStore);
 app.mount('#app')

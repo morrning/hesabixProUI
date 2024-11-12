@@ -37,7 +37,7 @@ import {ref, watch, computed, defineComponent} from 'vue'
           :value="output"
           outlined
           color="primary"
-          @input="v => $emit('input', v)"
+          @input="(v: any) => $emit('input', v)"
       ></v-text-field>
     </template>
     <!-- !!! hide-actions prop too !!! -->

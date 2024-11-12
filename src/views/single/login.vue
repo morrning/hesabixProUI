@@ -79,7 +79,7 @@ export default {
               text: response.data.message,
               confirmButtonText: this.$t('dialog.ok'),
               icon: 'warning'
-            }).then((result) => {
+            }).then((result:any) => {
 
             });
           }
